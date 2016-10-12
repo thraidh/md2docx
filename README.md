@@ -18,10 +18,11 @@ The version of markdown should support plugins to allow e.g.
 Actually a hard requirement for me is that is has to run on Linux.
 I will be using Java, since I know the ecosystem better than C#.
 
-## PEG Parser for Markdown
+## Markdown parser
 
-Building on https://github.com/sirthias/pegdown and MultiMarkdown
-(https://github.com/fletcher/MultiMarkdown).
+I'll be using [pegdown](https://github.com/sirthias/pegdown) as Markdown parser,
+as it can be made compatible to [MultiMarkdown](https://github.com/fletcher/MultiMarkdown),
+which is my Markdown dialect of choice.
 
 Add extension block syntax to allow inline text-based generation of text or
 images (http://www.mattgreer.org/articles/creating-a-pegdown-plugin/).
