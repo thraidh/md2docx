@@ -1,0 +1,80 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.thraidh</groupId>
+    <artifactId>md2docx</artifactId>
+    <packaging>jar</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>md2docx</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin> 
+                <groupId>org.codehaus.mojo</groupId> 
+                <artifactId>rpm-maven-plugin</artifactId>
+                <version>2.1-alpha-1</version> 
+                <executions> 
+                    <execution> 
+                        <goals> 
+                            <goal>rpm</goal>
+                        </goals> 
+                    </execution> 
+                </executions> 
+                <configuration> 
+                    <copyright>2016, Ron Koerner</copyright> 
+                    <group>System Environment/Daemons</group> 
+                    <defaultDirmode>755</defaultDirmode> 
+                    <defaultFilemode>644</defaultFilemode>
+                    <defaultUsername>root</defaultUsername> 
+                    <defaultGroupname>root</defaultGroupname>
+                    <mappings> 
+                        <mapping> 
+                            <directory>/opt/md2docx/lib</directory> 
+                            <directoryIncluded>false</directoryIncluded>
+                            <artifact /> 
+                            <dependency> 
+                                <excludes /> 
+                            </dependency> 
+                        </mapping> 
+                    </mappings>
+                </configuration> 
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
